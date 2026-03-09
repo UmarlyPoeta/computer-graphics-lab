@@ -1,25 +1,25 @@
 # 🖥️ Computer Graphics Labs — OpenGL + GLFW
 
-Repozytorium zawiera rozwiązania laboratoriów z grafiki komputerowej prowadzonych przy użyciu **OpenGL 3.3 Core Profile** i biblioteki **GLFW**.
+Solutions and exercises for computer graphics labs using **OpenGL 3.3 Core Profile** and the **GLFW** library.
 
 ---
 
-## 📁 Struktura projektu
+## 📁 Project Structure
 
 ```
 computer-graphics-lab/
-├── CMakeLists.txt          # główny plik CMake (buduje wszystkie laby)
+├── CMakeLists.txt          # root CMake file (builds all labs)
 ├── README.md
 ├── scripts/
-│   ├── setup_windows.md    # instrukcja instalacji bibliotek (Windows / Visual Studio)
-│   └── setup_linux.sh      # automatyczna instalacja zależności (Linux)
+│   ├── setup_windows.md    # step-by-step setup guide (Windows / Visual Studio)
+│   └── setup_linux.sh      # automatic dependency installer (Linux)
 ├── deps/
-│   └── README.md           # gdzie umieścić GLFW i GLAD
+│   └── README.md           # where to place GLFW and GLAD
 ├── lab1/
 │   ├── CMakeLists.txt
-│   ├── main.cpp            # ✅ rozwiązanie
+│   ├── main.cpp            # ✅ complete solution
 │   └── exercise/
-│       └── main_exercise.cpp  # 📝 ćwiczenie do uzupełnienia
+│       └── main_exercise.cpp  # 📝 code to fill in
 ├── lab2/
 │   ├── CMakeLists.txt
 │   ├── main.cpp
@@ -34,10 +34,10 @@ computer-graphics-lab/
 
 ---
 
-## 🔧 Wymagania
+## 🔧 Requirements
 
-| Narzędzie | Link |
-|-----------|------|
+| Tool | Link |
+|------|------|
 | Visual Studio (Windows) | https://visualstudio.microsoft.com/vs/ |
 | CMake ≥ 3.15 | https://cmake.org/download/ |
 | GLFW 3.x | https://www.glfw.org/ |
@@ -45,11 +45,11 @@ computer-graphics-lab/
 
 ---
 
-## 📦 Przygotowanie bibliotek
+## 📦 Setting Up Dependencies
 
 ### Windows (Visual Studio)
 
-Szczegółowa instrukcja krok po kroku: [`scripts/setup_windows.md`](scripts/setup_windows.md)
+See the step-by-step guide: [`scripts/setup_windows.md`](scripts/setup_windows.md)
 
 ### Linux (Ubuntu/Debian)
 
@@ -60,7 +60,7 @@ chmod +x scripts/setup_linux.sh
 
 ---
 
-## 🏗️ Budowanie projektu
+## 🏗️ Building the Project
 
 ### Windows (CMake + Visual Studio)
 
@@ -79,43 +79,43 @@ cmake ..
 make -j$(nproc)
 ```
 
-Pliki wykonywalne znajdziesz w `build/lab1/`, `build/lab2/`, `build/lab3/`.
+Executables will be placed in `build/lab1/`, `build/lab2/`, `build/lab3/`.
 
 ---
 
-## 📚 Opis laboratoriów
+## 📚 Lab Overview
 
-### Lab 1 — Konfiguracja projektu
-- Instalacja i linkowanie GLFW + GLAD
-- Weryfikacja środowiska (program kompiluje się bez błędów)
+### Lab 1 — Project Setup
+- Installing and linking GLFW + GLAD
+- Environment verification (program compiles without errors)
 
-### Lab 2 — Podstawowe okno OpenGL
-- Inicjalizacja GLFW i kontekstu OpenGL 3.3 Core
-- Tworzenie okna, viewport, double buffering
-- Główna pętla renderowania
+### Lab 2 — Basic OpenGL Window
+- Initializing GLFW and OpenGL 3.3 Core context
+- Creating a window, setting up viewport, double buffering
+- Main render loop
 
-### Lab 3 — Pierwszy trójkąt (shadery)
-- Vertex Shader i Fragment Shader w GLSL
-- VAO (Vertex Array Object) i VBO (Vertex Buffer Object)
-- Rysowanie prymitywów: `glDrawArrays`
+### Lab 3 — First Triangle (Shaders)
+- Writing Vertex and Fragment shaders in GLSL
+- VAO (Vertex Array Object) and VBO (Vertex Buffer Object)
+- Drawing primitives with `glDrawArrays`
 
 ---
 
-## 📝 Ćwiczenia
+## 📝 Exercises
 
-Każde laboratorium posiada katalog `exercise/` z plikiem `main_exercise.cpp` zawierającym **kod do uzupełnienia**. Miejsca do wypełnienia są oznaczone:
+Each lab has an `exercise/` folder with a `main_exercise.cpp` file containing **code to complete**. Spots to fill in are marked:
 
 ```cpp
-// TODO: [opis zadania]
+// TODO: [task description]
 ```
 
-Gotowe rozwiązania znajdziesz w `main.cpp` w katalogu nadrzędnym.
+Complete solutions are in `main.cpp` in the parent lab directory.
 
 ---
 
-## 💡 Wskazówki
+## 💡 Tips
 
-- **Core Profile** — tylko nowoczesne funkcje OpenGL (zalecane)
-- **Compatibility Profile** — stare + nowe funkcje (do debugowania legacy kodu)
-- Współrzędne wierzchołków w OpenGL są w zakresie `<-1.0, 1.0>` (NDC — Normalized Device Coordinates)
-- `glClear` + `glfwSwapBuffers` muszą być wywoływane w każdej klatce
+- **Core Profile** — modern OpenGL only (recommended)
+- **Compatibility Profile** — legacy + modern functions (useful for debugging old code)
+- Vertex coordinates in OpenGL use NDC (Normalized Device Coordinates) in the range `<-1.0, 1.0>`
+- `glClear` + `glfwSwapBuffers` must be called every frame
