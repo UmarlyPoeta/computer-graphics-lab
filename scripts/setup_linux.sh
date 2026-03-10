@@ -12,7 +12,7 @@ if [ "$OS_ID" == "fedora" ]; then
     sudo dnf upgrade -y --refresh
 
     echo "==> Instalacja narzędzi budowania (CMake, GCC, Git)..."
-    sudo dnf groupinstall -y "C Development Tools and Libraries"
+    sudo dnf group install -y "C Development Tools and Libraries" || sudo dnf install -y @development-tools
     sudo dnf install -y cmake git gcc-c++ python3-pip
 
     echo "==> Instalacja zależności OpenGL, GLFW (dla Wayland/Hyprland)..."
