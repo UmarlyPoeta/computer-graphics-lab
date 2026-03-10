@@ -13,7 +13,7 @@ set(GLFW_INCLUDE "${DEPS_DIR}/GLFW/include")
 set(GLFW_LIB_DIR "${DEPS_DIR}/GLFW/lib")
 
 # GLAD  (drop glad.c + include/glad/ here)
-set(GLAD_SRC "${DEPS_DIR}/GLAD/src/glad.c")
+set(GLAD_SRC "${DEPS_DIR}/GLAD/src/gl.c")
 set(GLAD_INCLUDE "${DEPS_DIR}/GLAD/include")
 
 # ─── GLAD as a small library ──────────────────────────────────────────────────
