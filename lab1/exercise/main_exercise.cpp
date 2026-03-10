@@ -15,9 +15,15 @@
 int main()
 {
     // TODO: zainicjalizuj GLFW (glfwInit)
+    if (!glfwInit()) {
+        std::cerr << "glfw nie zainijalizowane";
+    }
     // TODO: wypisz wersję GLFW na ekran przy użyciu glfwGetVersionString()
+    std::cout << glfwGetVersionString() << std::endl;
     // TODO: zakończ GLFW (glfwTerminate)
 
+
+    glfwTerminate();
     return 0;
 }
 
