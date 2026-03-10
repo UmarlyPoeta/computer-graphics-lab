@@ -2,7 +2,7 @@
 // Cel: utworzenie okna 800x800 z ciemnym tłem i główną pętlą renderowania.
 
 #include <iostream>
-#include <glad/glad.h>
+#include <glad/gl.h>
 #include <GLFW/glfw3.h>
 
 int main()

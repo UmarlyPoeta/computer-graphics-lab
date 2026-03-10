@@ -3,7 +3,7 @@
 // Jeśli ten program skompiluje się bez błędów — środowisko jest gotowe.
 
 #include <iostream>
-#include <glad/glad.h>
+#include <glad/gl.h>
 #include <GLFW/glfw3.h>
 
 int main()

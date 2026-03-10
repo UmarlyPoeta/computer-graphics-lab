@@ -14,7 +14,7 @@
 
 #include <iostream>
 #include <cmath>
-#include <glad/glad.h>
+#include <glad/gl.h>
 #include <GLFW/glfw3.h>
 
 // TODO [1/7]: Wpisz kod GLSL dla Vertex Shadera.
