@@ -37,26 +37,15 @@ GLAD_DIR="$(dirname "$0")/../deps/GLAD"
 mkdir -p "$GLAD_DIR"
 
 if command -v pip3 &>/dev/null; then
-    # Spróbujmy wymusić instalację modułu w przestrzeni użytkownika
-    pip3 install glad --quiet --break-system-packages --user || pip3 install glad --quiet --user
-    
-    python3 -c "
-import sys
-try:
-    import glad.__main__ as g
-    sys.argv = ['glad','--api','gl:core=3.3','--out-path','$GLAD_DIR','c']
-    g.main()
-except ImportError:
-    try:
-        from glad import main as g_main
-        sys.argv = ['glad','--api','gl:core=3.3','--out-path','$GLAD_DIR','c']
-        g_main()
-    except ImportError:
-        print('Błąd: Nie znaleziono modułu glad. Używamy polecenia terminalowego...')
-"
-    # Fallback jeśli paczka się zainstalowała do ~/.local/bin/glad
-    if [ ! -f "$GLAD_DIR/src/glad.c" ]; then
-        ~/.local/bin/glad --api gl:core=3.3 --out-path "$GLAD_DIR" c || glad --api gl:core=3.3 --out-path "$GLAD_DIR" c
+    pip3 install glad2 --quiet --break-system-packages --user || pip3 install glad2 --quiet --user
+
+    # glad2 tworzy komendę 'glad'
+    if command -v ~/.local/bin/glad &>/dev/null; then
+        ~/.local/bin/glad --api gl:core=3.3 --out-path "$GLAD_DIR" c
+    elif command -v glad &>/dev/null; then
+        glad --api gl:core=3.3 --out-path "$GLAD_DIR" c
+    else
+        python3 -m glad --api gl:core=3.3 --out-path "$GLAD_DIR" c
     fi
     echo "==> GLAD wygenerowany w $GLAD_DIR"
 else
