@@ -37,15 +37,27 @@ GLAD_DIR="$(dirname "$0")/../deps/GLAD"
 mkdir -p "$GLAD_DIR"
 
 if command -v pip3 &>/dev/null; then
-    # Dodajemy argument --break-system-packages dla nowszych Pythonów (jak Fedora 42), jeśli to konieczne
-    pip3 install glad --quiet --break-system-packages || pip3 install glad --quiet
+    # Spróbujmy wymusić instalację modułu w przestrzeni użytkownika
+    pip3 install glad --quiet --break-system-packages --user || pip3 install glad --quiet --user
     
     python3 -c "
-import glad.main as g
 import sys
-sys.argv = ['glad','--api','gl:core=3.3','--out-path','$GLAD_DIR','c']
-g.main()
+try:
+    import glad.__main__ as g
+    sys.argv = ['glad','--api','gl:core=3.3','--out-path','$GLAD_DIR','c']
+    g.main()
+except ImportError:
+    try:
+        from glad import main as g_main
+        sys.argv = ['glad','--api','gl:core=3.3','--out-path','$GLAD_DIR','c']
+        g_main()
+    except ImportError:
+        print('Błąd: Nie znaleziono modułu glad. Używamy polecenia terminalowego...')
 "
+    # Fallback jeśli paczka się zainstalowała do ~/.local/bin/glad
+    if [ ! -f "$GLAD_DIR/src/glad.c" ]; then
+        ~/.local/bin/glad --api gl:core=3.3 --out-path "$GLAD_DIR" c || glad --api gl:core=3.3 --out-path "$GLAD_DIR" c
+    fi
     echo "==> GLAD wygenerowany w $GLAD_DIR"
 else
     echo "⚠️  pip3 nie znalezione. Pobierz GLAD ręcznie z https://glad.dav1d.de/"
