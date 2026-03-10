@@ -16,8 +16,8 @@ if [ "$OS_ID" == "fedora" ]; then
     sudo dnf install -y cmake git gcc-c++ python3-pip
 
     echo "==> Instalacja zależności OpenGL, GLFW (dla Wayland/Hyprland)..."
-    # glfw-wayland-devel zapewni paczkę kompilującą natywnie dla Wayland
-    sudo dnf install -y glfw-devel glfw-wayland-devel mesa-libGL-devel mesa-libEGL-devel wayland-devel libxkbcommon-devel libglvnd-devel
+    # glfw-devel zazwyczaj zawiera już obsługę Wayland w nowych wersjach Fedory, więc usuwamy wymóg osobnego glfw-wayland-devel
+    sudo dnf install -y glfw-devel mesa-libGL-devel mesa-libEGL-devel wayland-devel libxkbcommon-devel libglvnd-devel
 elif [ "$OS_ID" == "ubuntu" ] || [ "$OS_ID" == "debian" ]; then
     echo "==> Wykryto system Debian/Ubuntu."
     echo "==> Aktualizacja listy pakietów..."
