@@ -25,7 +25,7 @@ int main()
     glfwMakeContextCurrent(window);
 
     // ── 3. Ładowanie GLAD (wskaźniki do funkcji OpenGL) ───────────────────
-    gladLoadGL();
+    gladLoadGL(glfwGetProcAddress);
 
     // ── 4. Viewport — obszar rysowania w oknie ────────────────────────────
     // glViewport(x_start, y_start, szerokość, wysokość)

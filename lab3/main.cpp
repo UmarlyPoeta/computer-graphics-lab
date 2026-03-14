@@ -42,7 +42,7 @@ int main()
         return -1;
     }
     glfwMakeContextCurrent(window);
-    gladLoadGL();
+    gladLoadGL(glfwGetProcAddress);
     glViewport(0, 0, 800, 800);
 
     // ── 2. Kompilacja shaderów ─────────────────────────────────────────────
