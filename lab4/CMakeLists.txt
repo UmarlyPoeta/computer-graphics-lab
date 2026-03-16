@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.15)
+project(lab4)
+add_lab(lab4 main.cpp)
+# add_lab(lab4_exercise exercise/main_exercise.cpp)
+add_lab(lab4_cw main_zad_1.cpp)
