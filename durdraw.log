@@ -1,0 +1,74 @@
+{"timestamp": "2026-03-27T12:44:28.179407+01:00", "level": "ERROR", "name": "durdraw.crash", "msg": "durview crashed", "data": {"class": "OSError", "message": "[Errno 25] Inappropriate ioctl for device"}}
+Traceback (most recent call last):
+  File "/home/patryk/.local/lib/python3.10/site-packages/durdraw/log.py", line 172, in inner
+    return func(*args, **kwargs)
+  File "/home/patryk/.local/lib/python3.10/site-packages/durdraw/main.py", line 84, in main
+    term_size = os.get_terminal_size()
+OSError: [Errno 25] Inappropriate ioctl for device
+{"timestamp": "2026-03-27T12:44:28.180100+01:00", "level": "ERROR", "name": "durdraw.crash", "msg": "durview crashed", "data": {"class": "OSError", "message": "[Errno 25] Inappropriate ioctl for device"}}
+Traceback (most recent call last):
+  File "/home/patryk/.local/lib/python3.10/site-packages/durdraw/log.py", line 172, in inner
+    return func(*args, **kwargs)
+  File "/home/patryk/.local/lib/python3.10/site-packages/durdraw/durfetch.py", line 122, in main
+    durdraw_main.main(fetch_args=durdraw_args)
+  File "/home/patryk/.local/lib/python3.10/site-packages/durdraw/log.py", line 179, in inner
+    raise e
+  File "/home/patryk/.local/lib/python3.10/site-packages/durdraw/log.py", line 172, in inner
+    return func(*args, **kwargs)
+  File "/home/patryk/.local/lib/python3.10/site-packages/durdraw/main.py", line 84, in main
+    term_size = os.get_terminal_size()
+OSError: [Errno 25] Inappropriate ioctl for device
+{"timestamp": "2026-03-27T12:45:24.611907+01:00", "level": "INFO", "name": "durdraw.ui_curses", "msg": "UserInterface created", "data": {}}
+{"timestamp": "2026-03-27T12:45:25.424809+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 23}}
+{"timestamp": "2026-03-27T12:45:25.425211+01:00", "level": "INFO", "name": "durdraw.movie", "msg": "movie initialized", "data": {"sizeX": 80, "sizeY": 23}}
+{"timestamp": "2026-03-27T12:45:25.566003+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-27T12:45:25.566509+01:00", "level": "INFO", "name": "durdraw.movie", "msg": "movie initialized", "data": {"sizeX": 80, "sizeY": 24}}
+{"timestamp": "2026-03-27T12:45:25.568280+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-27T12:45:25.615982+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-27T12:45:25.630161+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-27T12:45:25.651711+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-27T12:45:25.668199+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-27T12:45:25.692245+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-27T12:45:25.708512+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-27T12:45:25.714830+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-27T12:45:25.722399+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-27T12:45:25.724879+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-27T12:45:25.727051+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-27T12:45:25.729046+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-28T13:05:43.227994+01:00", "level": "ERROR", "name": "durdraw.crash", "msg": "durview crashed", "data": {"class": "OSError", "message": "[Errno 25] Inappropriate ioctl for device"}}
+Traceback (most recent call last):
+  File "/home/patryk/.local/lib/python3.10/site-packages/durdraw/log.py", line 172, in inner
+    return func(*args, **kwargs)
+  File "/home/patryk/.local/lib/python3.10/site-packages/durdraw/main.py", line 84, in main
+    term_size = os.get_terminal_size()
+OSError: [Errno 25] Inappropriate ioctl for device
+{"timestamp": "2026-03-28T13:05:43.274988+01:00", "level": "ERROR", "name": "durdraw.crash", "msg": "durview crashed", "data": {"class": "OSError", "message": "[Errno 25] Inappropriate ioctl for device"}}
+Traceback (most recent call last):
+  File "/home/patryk/.local/lib/python3.10/site-packages/durdraw/log.py", line 172, in inner
+    return func(*args, **kwargs)
+  File "/home/patryk/.local/lib/python3.10/site-packages/durdraw/durfetch.py", line 122, in main
+    durdraw_main.main(fetch_args=durdraw_args)
+  File "/home/patryk/.local/lib/python3.10/site-packages/durdraw/log.py", line 179, in inner
+    raise e
+  File "/home/patryk/.local/lib/python3.10/site-packages/durdraw/log.py", line 172, in inner
+    return func(*args, **kwargs)
+  File "/home/patryk/.local/lib/python3.10/site-packages/durdraw/main.py", line 84, in main
+    term_size = os.get_terminal_size()
+OSError: [Errno 25] Inappropriate ioctl for device
+{"timestamp": "2026-03-28T13:06:28.135858+01:00", "level": "INFO", "name": "durdraw.ui_curses", "msg": "UserInterface created", "data": {}}
+{"timestamp": "2026-03-28T13:06:28.139230+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 23}}
+{"timestamp": "2026-03-28T13:06:28.139515+01:00", "level": "INFO", "name": "durdraw.movie", "msg": "movie initialized", "data": {"sizeX": 80, "sizeY": 23}}
+{"timestamp": "2026-03-28T13:06:28.173827+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-28T13:06:28.174486+01:00", "level": "INFO", "name": "durdraw.movie", "msg": "movie initialized", "data": {"sizeX": 80, "sizeY": 24}}
+{"timestamp": "2026-03-28T13:06:28.178460+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-28T13:06:28.197163+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-28T13:06:28.200470+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-28T13:06:28.203269+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-28T13:06:28.205341+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-28T13:06:28.208299+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-28T13:06:28.211748+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-28T13:06:28.215809+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-28T13:06:28.218769+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-28T13:06:28.220977+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-28T13:06:28.226832+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}
+{"timestamp": "2026-03-28T13:06:28.230240+01:00", "level": "INFO", "name": "durdraw.frame", "msg": "frame initialized", "data": {"width": 80, "height": 24}}

@@ -16,6 +16,8 @@ set(GLFW_LIB_DIR "${DEPS_DIR}/GLFW/lib")
 set(GLAD_SRC "${DEPS_DIR}/GLAD/src/gl.c")
 set(GLAD_INCLUDE "${DEPS_DIR}/GLAD/include")
 
+set(GLM_INCLUDE "${DEPS_DIR}/GLM")
+
 # ─── GLAD as a small library ──────────────────────────────────────────────────
 add_library(glad STATIC ${GLAD_SRC})
 target_include_directories(glad PUBLIC ${GLAD_INCLUDE})
