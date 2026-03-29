@@ -1,13 +1,21 @@
-cmake_minimum_required(VERSION 3.15)
-project(lab6)
+# lab6/CMakeLists.txt
 
-include_directories(${CMAKE_SOURCE_DIR}/include)
-file(GLOB SRC_FILES ${CMAKE_SOURCE_DIR}/src/*.cpp)
+file(GLOB LAB6_SRC
+    "${CMAKE_CURRENT_SOURCE_DIR}/main.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp"
+)
 
-target_sources(lab6 PRIVATE ${SRC_FILES})
-target_link_libraries(lab6 PRIVATE OpenGL::GL)
-add_lab(lab6
-    main.cpp
-    Camera.cpp
-    shaderClass.cpp
+add_lab(lab6 "${LAB6_SRC}")
+
+target_include_directories(lab6 PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/include"
+    "${GLM_INCLUDE}"
+)
+
+# Shadery obok binarki
+add_custom_command(TARGET lab6 POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+        "${CMAKE_CURRENT_SOURCE_DIR}/shaders"
+        "$<TARGET_FILE_DIR:lab6>/shaders"
+    COMMENT "Copying shaders for lab6..."
 )

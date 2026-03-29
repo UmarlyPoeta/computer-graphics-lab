@@ -27,17 +27,18 @@ find_package(OpenGL REQUIRED)
 
 # ─── Helper macro ─────────────────────────────────────────────────────────────
 macro(add_lab TARGET SRC)
-  add_executable(${TARGET} ${SRC})
-  target_include_directories(${TARGET} PRIVATE ${GLFW_INCLUDE} ${GLAD_INCLUDE})
-  target_link_directories(${TARGET} PRIVATE ${GLFW_LIB_DIR})
-
-  # On Linux (Fedora/Ubuntu), package managers provide glfw (usually as libglfw.so)
-  # instead of glfw3, so we check for WIN32 to use static glfw3, otherwise dynamic glfw
-  if(WIN32)
-    target_link_libraries(${TARGET} PRIVATE glad OpenGL::GL glfw3 gdi32 user32 shell32)
-  else()
-    target_link_libraries(${TARGET} PRIVATE glad OpenGL::GL glfw)
-  endif()
+    add_executable(${TARGET} ${SRC})
+    target_include_directories(${TARGET} PRIVATE
+        ${GLFW_INCLUDE}
+        ${GLAD_INCLUDE}
+        ${GLM_INCLUDE}          # ← dodaj tę linię
+    )
+    target_link_directories(${TARGET} PRIVATE ${GLFW_LIB_DIR})
+    if(WIN32)
+        target_link_libraries(${TARGET} PRIVATE glad OpenGL::GL glfw3 gdi32 user32 shell32)
+    else()
+        target_link_libraries(${TARGET} PRIVATE glad OpenGL::GL glfw)
+    endif()
 endmacro()
 
 # ─── Labs ─────────────────────────────────────────────────────────────────────
