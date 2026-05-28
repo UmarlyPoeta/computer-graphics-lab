@@ -31,6 +31,20 @@ GLuint indices[] = {
     0, 1, 5,  5, 4, 0   // bottom
 };
 
+static void framebufferSizeCallback(GLFWwindow* window, int width, int height)
+{
+    if (width <= 0 || height <= 0)
+        return;
+
+    glViewport(0, 0, width, height);
+    Camera* camera = static_cast<Camera*>(glfwGetWindowUserPointer(window));
+    if (camera)
+    {
+        camera->width = width;
+        camera->height = height;
+    }
+}
+
 int main()
 {
     glfwInit();
@@ -41,6 +55,10 @@ int main()
     GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Lab6 - Cube", NULL, NULL);
     if (!window) { glfwTerminate(); return -1; }
     glfwMakeContextCurrent(window);
+    glfwSetWindowAttrib(window, GLFW_FOCUS_ON_SHOW, GLFW_TRUE);
+    glfwFocusWindow(window);
+    glfwSetInputMode(window, GLFW_STICKY_KEYS, GLFW_TRUE);
+    glfwSetInputMode(window, GLFW_STICKY_MOUSE_BUTTONS, GLFW_TRUE);
 
     gladLoadGL(glfwGetProcAddress);
     glViewport(0, 0, WIDTH, HEIGHT);
@@ -57,6 +75,8 @@ int main()
     EBO1.Unbind();
 
     Camera camera(WIDTH, HEIGHT, glm::vec3(0.0f, 0.0f, 2.0f));
+    glfwSetWindowUserPointer(window, &camera);
+    glfwSetFramebufferSizeCallback(window, framebufferSizeCallback);
 
     while (!glfwWindowShouldClose(window))
     {
